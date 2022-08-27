@@ -106,3 +106,7 @@ D:\SD3.2\KMClothing\KMClothing\obj\Debug\KMClothing.csproj.CoreCompileInputs.cac
 D:\SD3.2\KMClothing\KMClothing\obj\Debug\KMClothing.csproj.CopyComplete
 D:\SD3.2\KMClothing\KMClothing\obj\Debug\KMClothing.dll
 D:\SD3.2\KMClothing\KMClothing\obj\Debug\KMClothing.pdb
+D:\SD3.2\KMClothing\KMClothing\bin\PagedList.dll
+D:\SD3.2\KMClothing\KMClothing\bin\PagedList.Mvc.dll
+D:\SD3.2\KMClothing\KMClothing\bin\PagedList.xml
+D:\SD3.2\KMClothing\KMClothing\bin\PagedList.Mvc.xml

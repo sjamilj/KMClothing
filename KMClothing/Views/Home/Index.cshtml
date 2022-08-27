@@ -1,4 +1,6 @@
 ﻿@model KMClothing.Models.Home.HomeIndexViewModel
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Home Page";
 }
@@ -47,15 +49,18 @@
 
 </div>
 
-<div class="olContent f1"><h2 style="color:black">Search Product/Category</h2></div>
-<div class="olSearch fr">
-    <input type="text" placeholder="Enter Keyword" name="searchKey" class="inputComn houseText form-control" />
-    <div class="searchIcon">
-        <button type="button" class="searchBtn">
-            @*<img src="~/images/search.png" />*@
-        </button>
+<form method="post">
+    <div class="olContent f1"><h2 style="color:black">Search Product/Category</h2></div>
+    <div class="olSearch fr">
+        <input type="text" name="search" placeholder="Enter Keyword" class="inputComn houseText form-control" />
+        <div class="searchIcon">
+            <button type="button" class="searchBtn">
+                @*<img src="~/images/search.png" />*@
+            </button>
+        </div>
     </div>
-</div>
+</form>
+
 
 <div class="row">
     <div class="col-md-12">
@@ -81,17 +86,22 @@
                     <p>
                         @if (item.Quantity > 0)
                         {
-                        <p>
-                           Available
+                            using (Html.BeginForm("AddToCart", "Home", new { productId = item.ProductId }, FormMethod.Post))
+                            {
+                                <button type="submit" class="pull-right"><i class="fa fa-shopping-cart"></i></button>
+                            }
+
+<p>
+                            Available
                         </p>
-                          }
-                         else
-                         {
-                      <p>
-                             Not Available
-                     </p>
-                         }
-                     </p>
+                    }
+                    else
+                    {
+                        <p>
+                            Not Available
+                        </p>
+                    }
+
                         <div class="product-item-badge">
                             @if (item.IsFeatured == true)
                             {
@@ -105,9 +115,12 @@
 
                         </div>
                     </div>
+                </div>
             </div>
-        </div>
-     }
+        }
 
+</div>
+<div class="container">
+    @Html.PagedListPager(Model.ListOfProducts, page => Url.Action("Index", new { page, search = Request.QueryString["search"] }))
 </div>
 
