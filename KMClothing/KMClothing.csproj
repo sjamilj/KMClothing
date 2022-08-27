@@ -270,7 +270,10 @@
     <Content Include="images\addi.png" />
     <Content Include="images\bonobo.png" />
     <Content Include="images\next.png" />
+    <Content Include="images\pant.png" />
     <Content Include="images\search.png" />
+    <Content Include="images\shirt.png" />
+    <Content Include="images\spolo.png" />
     <Content Include="images\zara.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
